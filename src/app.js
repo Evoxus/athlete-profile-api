@@ -27,7 +27,7 @@ app.use(function errorHandler(error, req, res, next) {
 });
 
 const DBURL = process.env.DATABASEURL || 'mongodb://localhost:27017/athlete_profile';
-mongoose.connect(DBURL, { useUnifiedTopology: true });
+mongoose.connect(DBURL, { useUnifiedTopology: true }, { useNewUrlParser: true });
 
 app.use('/api/profiles', profilesRouter);
 
